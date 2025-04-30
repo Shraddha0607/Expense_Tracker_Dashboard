@@ -6,19 +6,21 @@ import AddTransactionForm from './components/AddTransactionForm';
 
 function App() {
   const [transaction, setTransaction] = useState([]);
+  const transactionDataKey = "transaction";
 
   useEffect(() => {
-    const savedTransactions = JSON.parse(localStorage.getItem('transactions'));
+    const savedTransactions = JSON.parse(localStorage.getItem(transactionDataKey));
     if(savedTransactions) {
       setTransaction(savedTransactions);
     }
   }, []);
 
-  useEffect(() => {
-    if(transaction.length > 0) {
-      localStorage.setItem('transaction', JSON.stringify(transaction));
-    }
-  }, [transaction]);
+  const updateHandler = function (transaction){
+    // state update
+    // storage update
+    setTransaction(transaction);
+    localStorage.setItem(transactionDataKey, JSON.stringify(transaction));
+  }
 
   return (
     <>
@@ -28,10 +30,10 @@ function App() {
 
       <TransactionList
         transaction={transaction}
-        setTransaction={setTransaction} />
+        setTransaction={updateHandler} />
 
       <AddTransactionForm
-        setTransaction={setTransaction} />
+        setTransaction={updateHandler} />
     </>
   )
 }

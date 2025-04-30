@@ -6,6 +6,7 @@ function TransactionList({ transaction, setTransaction }) {
         console.log(id);
 
         setTransaction((prev) => prev.filter((t) => t.id !== id));
+        
     };
 
     return (
