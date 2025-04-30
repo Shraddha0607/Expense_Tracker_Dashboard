@@ -34,7 +34,7 @@ function AddTransactionForm({ setTransaction }) {
                     <label className='form-label'>Amount</label>
                     <input className='form-control' name="amount" type="number"></input>
                 </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" className="btn btn-primary">Add</button>
             </form>
         </div>
     )

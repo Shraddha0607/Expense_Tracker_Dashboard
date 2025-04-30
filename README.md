@@ -1,5 +1,7 @@
 # ExpenseTrackerDashboard
 
+![alt text](image.png)
+
 🎯 Project Title: "Expense Tracker Dashboard"
 🧩 Concepts Practiced:
 JSX: Building structured UI (cards, lists, forms)
